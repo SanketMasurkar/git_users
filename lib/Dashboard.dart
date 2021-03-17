@@ -172,7 +172,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                                   obj.isBookmarked = true;
                                   _user_details_api.userList[obj.id].isBookmarked = true;
                                   if(!bookmarkedList.containsKey(obj.id)){
-                                    bookmarkedList[obj.id.toString()] = obj;
+                                    bookmarkedList[obj.id] = obj;
                                   }
                                   _setBookmarkedList();
                                   _bookmarkController.add(true);
@@ -202,7 +202,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
         return ListView.builder(
             itemCount: bookmarkedList.keys.length,
             itemBuilder: (context, index){
-              String key = bookmarkedList.keys.elementAt(index);
+              int key = bookmarkedList.keys.elementAt(index);
               ModelUserDetails obj = bookmarkedList[key];
               return Container(
                 margin: EdgeInsets.fromLTRB(15, 10, 15, 0),

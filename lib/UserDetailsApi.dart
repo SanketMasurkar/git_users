@@ -52,7 +52,7 @@ class UserDetailsApi {
 
       if(bookmarkedList != null && bookmarkedList.length != 0){
         for(int j = 0; j < bookmarkedList.keys.length; j++){
-          int bmId = int.parse(bookmarkedList.keys.elementAt(j));
+          int bmId = bookmarkedList.keys.elementAt(j);
           if(mainId == bmId){
             obj.isBookmarked = true;
             break;
@@ -77,7 +77,7 @@ class UserDetailsApi {
   }
 }
 
-LinkedHashMap<String, ModelUserDetails> bookmarkedList = LinkedHashMap();
+LinkedHashMap<int, ModelUserDetails> bookmarkedList = LinkedHashMap();
 
 getPreference(){
   /*Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
