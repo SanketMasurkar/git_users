@@ -240,7 +240,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
                       child: InkWell(
                           onTap: () async {
                             _user_details_api.userList[obj.id].isBookmarked = false;
-                            bookmarkedList.remove(obj.id);
+                            bookmarkedList.remove(obj.id.toString());
                             _setBookmarkedList();
                             if(bookmarkedList.length == 0){
                               _bookmarkDataController.add(responseData.Error);
